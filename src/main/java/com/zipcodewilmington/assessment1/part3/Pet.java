@@ -14,6 +14,8 @@ public abstract class Pet implements Animal {
     public Pet() {
         this.name = "";
         this.age=0;
+        this.owner=null;
+
     }
 
     /**
@@ -21,7 +23,7 @@ public abstract class Pet implements Animal {
      */
     public Pet(String name) {
         this.name = name;
-        this.age = getAge();
+        //this.age = getAge();
 
     }
 
@@ -31,7 +33,7 @@ public abstract class Pet implements Animal {
      */
     public Pet(int age) {
         this.age = age;
-        this.name = getName();
+        //this.name = getName();
 
     }
 
@@ -57,7 +59,7 @@ public abstract class Pet implements Animal {
      */
     public Integer getAge() {
 
-        return age;
+        return this.age;
     }
 
     /**
@@ -74,6 +76,6 @@ public abstract class Pet implements Animal {
      */
     public PetOwner getOwner() {
 
-        return owner;
+        return this.owner;
     }
 }

@@ -52,9 +52,9 @@ public class BasicStringUtils {
         char[] myChar = str.toCharArray();
         for(int i=0;i<myChar.length;i++){
             if(Character.isUpperCase(myChar[i])) {
-                Character.toLowerCase(myChar[i]);
+                myChar[i]=Character.toLowerCase(myChar[i]);
             }else{
-                    Character.toUpperCase(myChar[i]);
+                   myChar[i]= Character.toUpperCase(myChar[i]);
                 }
             builder.append(myChar[i]);
             }

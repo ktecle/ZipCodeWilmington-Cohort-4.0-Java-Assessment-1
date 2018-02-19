@@ -12,9 +12,18 @@ public class RockPaperSissorsEvaluator {
      * @param handSign a string representative of a hand sign
      * @return the respective winning move
      */
-    public String getWinningMove(String handSign) {
 
-        return null;
+    public String getWinningMove(String handSign) {
+        String outPut = "";
+        if (handSign.equals("rock")) {
+            outPut += "paper";
+        } else if (handSign.equals("scissors")) {
+            outPut += "rock";
+        } else if (handSign.equals("paper")) {
+            outPut += "scissors";
+        }
+
+        return outPut;
     }
 
     /**
@@ -22,7 +31,18 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        String outPut = "";
+        if (handSign.equals("rock")) {
+            outPut += "scissors";
+        } else if (handSign.equals("scissors")) {
+            outPut += "paper";
+        } else if (handSign.equals("paper")) {
+            outPut += "rock";
+        }
+
+        return outPut;
+
+
     }
 
     /**
@@ -31,6 +51,18 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+        String winner = "";
+        if ((handSignOfPlayer1.equals("rock") && handSignOfPlayer2.equals("paper")) ||
+                handSignOfPlayer1.equals("paper") && handSignOfPlayer2.equals("rock")) {
+            winner += "paper";
+        } else if ((handSignOfPlayer1.equals("rock") && handSignOfPlayer2.equals("scissors")) ||
+                handSignOfPlayer1.equals("scissors") && handSignOfPlayer2.equals("rock")) {
+            winner += "rock";
+        } else if ((handSignOfPlayer1.equals("scissors") && handSignOfPlayer2.equals("paper")) ||
+                handSignOfPlayer1.equals("paper") && handSignOfPlayer2.equals("scissors")) {
+            winner += "scissors";
+
+        }
+        return winner;
     }
 }

@@ -36,7 +36,7 @@ public class StringUtils {
         String firstWord = result[0];
         StringBuilder builder= new StringBuilder(firstWord);
         String myResult =builder.reverse().toString();
-        return myResult.substring(0,1).toUpperCase() + myResult.substring(1).toLowerCase();
+        return myResult.substring(0,1) + myResult.substring(1);
     }
 
     /**

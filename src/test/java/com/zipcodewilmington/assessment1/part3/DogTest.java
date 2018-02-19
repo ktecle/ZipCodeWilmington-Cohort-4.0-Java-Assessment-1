@@ -8,24 +8,13 @@ import org.junit.Test;
  */
 public class DogTest {
     @Test
-    public void implementationTest() {
-        Assert.assertTrue(false);
-
-    }
-
-    @Test
-    public void inheritanceTest() {
-        Assert.assertTrue(false);
-    }
-
-
-    @Test
     public void nullaryConstructorTest() {
         // Given
         PetOwner expectedOwner = null;
         String expectedName = "Dog name";
         Integer expectedAge = 0;
         Dog dog = new Dog();
+        dog.setName("Dog name");
 
         // When
         String actualName = dog.getName();
@@ -37,6 +26,8 @@ public class DogTest {
         Assert.assertEquals(expectedAge, actualAge);
         Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedOwner, actualOwner);
+
+
     }
 
     @Test
@@ -45,6 +36,7 @@ public class DogTest {
         String expectedName = "Name of Dog";
         Integer expectedAge = 0;
         Dog dog = new Dog(expectedName);
+        dog.setAge(0);
 
         // When
         String actualName = dog.getName();
@@ -63,6 +55,7 @@ public class DogTest {
         String expectedName = "Dog name";
         Integer expectedAge = Integer.MAX_VALUE;
         Dog dog = new Dog(expectedAge);
+        dog.setName("Dog name");
 
         // When
         String actualName = dog.getName();

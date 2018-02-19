@@ -13,6 +13,7 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
+
         return null;
     }
 

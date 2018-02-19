@@ -11,7 +11,7 @@ public class IntegerUtilsTest {
     public void getSumTest() {
         // : Given
         Integer input = 5;
-        Integer expected = 12;
+        Integer expected = 15;
 
         // : When
         Integer actual = IntegerUtils.getSumOfN(input);

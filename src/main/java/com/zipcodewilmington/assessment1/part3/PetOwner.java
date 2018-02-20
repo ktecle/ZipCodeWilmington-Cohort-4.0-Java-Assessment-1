@@ -10,12 +10,12 @@ public class PetOwner {
 
 
     String owner;
-    Map<String, ArrayList<Pet>>petOwner;
-    ArrayList<Pet>pet = new ArrayList<>();
+    Map<String, Pet[]>petOwner;
+    //ArrayList<Pet>pet = new ArrayList<>();
     Pet[]pets;
 
     public PetOwner(){
-        this.petOwner = new TreeMap<String,ArrayList<Pet>>();
+        this.petOwner = new TreeMap<String, Pet[]>();
     }
 
 
@@ -49,8 +49,10 @@ public class PetOwner {
         Pet[]petsRemaining = new Pet[0];
         int petsRemainingIndex=0;
         for (int i=0;i<pets.length;i++) {
-
-            if(!pets[i].equals(pet)){
+            if(pets[i]==null){
+                break;
+            }
+            else if(!pets[i].equals(pet)){
                 petsRemaining=Arrays.copyOf(petsRemaining,petsRemaining.length+1);
                 petsRemaining[petsRemainingIndex]=pets[i];
                 petsRemainingIndex++;
@@ -65,8 +67,15 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
+        for(String keys:petOwner.keySet()){
+            for(int i=0;i<petOwner.get(keys).length;i++){
+                if(petOwner.get(keys)[i].equals(pet) ){
+                    return true;
+                }
+            }
+        }
 
-        return null;
+        return false;
     }
 
     /**
